@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王祥瑀 Julia Wang | iOS Developer & Full Stack Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+        .section-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- 導覽列 -->
+    <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="text-xl font-bold tracking-wider text-slate-900">JULIA WANG</div>
+                <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest text-slate-600">
+                    <a href="#home" class="hover:text-blue-600 transition">首頁</a>
+                    <a href="#resume" class="hover:text-blue-600 transition">經歷</a>
+                    <a href="#projects" class="hover:text-blue-600 transition">專案作品</a>
+                    <a href="#contact" class="hover:text-blue-600 transition">聯絡我</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 text-slate-600">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-4">
+            <a href="#home" class="block text-slate-600">首頁</a>
+            <a href="#resume" class="block text-slate-600">經歷</a>
+            <a href="#projects" class="block text-slate-600">專案作品</a>
+            <a href="#contact" class="block text-slate-600">聯絡我</a>
+        </div>
+    </nav>
+
+    <!-- 首頁 Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="flex-1 text-center md:text-left">
+                <h2 class="text-blue-600 font-bold tracking-widest mb-2 uppercase">iOS Developer / Full Stack Engineer</h2>
+                <h1 class="text-5xl md:text-6xl font-bold text-slate-900 mb-6">王祥瑀 <span class="font-light">Julia Wang</span></h1>
+                <p class="text-lg text-slate-600 mb-8 max-w-2xl leading-relaxed">
+                    擁有約六年 iOS App 開發與維護經驗，專精於金融機構行動應用程式，參與過金融機構App，加入台灣振興三倍券及五倍券綁定功能，整合財金公司API，以及替金融機構App加入了行動支付及生物辨識登入功能等。
+                    目前任職公司提供我許多新嘗試的機會，任職間亦承接並完成傳統金融機構的官方網站建置案，亦具備 ASP.NET 官網開發實績，不將自己侷限於單一領域，樂於嘗試新挑戰。
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="#contact" class="bg-slate-900 text-white px-8 py-3 rounded-full font-medium hover:bg-slate-800 transition shadow-lg">聯絡我</a>
+                    <a href="#projects" class="border border-slate-300 px-8 py-3 rounded-full font-medium hover:bg-slate-100 transition">查看作品</a>
+                </div>
+                <div class="mt-8 flex justify-center md:justify-start space-x-6 text-slate-400">
+                    <a href="https://github.com/Julia1032003" target="_blank" class="hover:text-slate-900 transition"><i data-lucide="github"></i></a>
+                    <a href="https://medium.com/@julia1032003" target="_blank" class="hover:text-slate-900 transition"><i data-lucide="book-open"></i></a>
+                    <a href="mailto:julia1032003@gmail.com" class="hover:text-slate-900 transition"><i data-lucide="mail"></i></a>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl bg-blue-50">
+                    <img src="assets/IMG_4007.jpg" alt="王祥瑀 Julia Wang" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能專長 Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-16">技術專長 <span class="text-blue-600">.</span></h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Mobile Development -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 transition-all card-hover">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="smartphone"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">iOS App 開發</h4>
+                    <ul class="space-y-2 text-slate-600">
+                        <li>Swift / Objective-C / Flutter 開發</li>
+                        <li>MVVM / MVC 架構設計與實作</li>
+                        <li>生物辨識（Face ID / Touch ID）與行動支付功能開發</li>
+                         <li>個人化設定與手機門號轉帳功能開發</li>
+                        <li>跨版本相容性測試與效能優化</li>
+                        <li>資安弱點掃描與修補（Secure Coding）</li>
+                    </ul>
+                </div>
+                <!-- Web Development -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 transition-all card-hover">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="layout"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">Web 開發</h4>
+                    <ul class="space-y-2 text-slate-600">
+                        <li>C# / ASP.NET WebForms 開發與維護</li>
+                        <li>HTML5 / CSS3 / Bootstrap / Python</li>
+                        <li>JavaScript / jQuery 前端互動開發</li>
+                        <li>SQL Server 資料庫設計與查詢優化</li>
+                    </ul>
+                </div>
+                <!-- Tools & Security -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 transition-all card-hover">
+                    <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="shield-check"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4">工具與資安</h4>
+                    <ul class="space-y-2 text-slate-600">
+                         <li>Xcode / VS Code / Git 版本控管</li>
+                        <li>Postman / Wireshark 網路封包分析</li>
+                        <li>Fortify 靜態程式碼掃描（SAST）</li>
+                        <li>OWASP Mobile Top 10 安全實務</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作與教育經歷 Section -->
+    <section id="resume" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-3xl font-bold mb-16 text-center">經歷與教育 <span class="text-blue-600">.</span></h3>
+            
+            <div class="space-y-12">
+                <!-- Work -->
+                <div class="relative pl-8 border-l-2 border-slate-200">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-600 ring-4 ring-blue-50"></div>
+                    <div class="mb-2">
+                        <span class="text-sm font-bold text-blue-600 uppercase tracking-widest">2019.10 - 現在</span>
+                        <h4 class="text-2xl font-bold text-slate-900">程式設計師</h4>
+                        <p class="text-lg font-medium text-slate-700">聯合資訊中心</p>
+                    </div>
+                    <!--
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        負責五家信用合作社行動銀行 iOS App 的開發與維護。成功導入 E2EE 加密、生物辨識、行動支付等多項關鍵功能，完成新功能開發：裝置綁定、預約轉帳、手機門號轉帳、使用者密碼及Email 變更功能、常用帳號功能、電子存單功能並持續優化程式架構與安全性。
+                        農會團購系統後台的功能開發與維護以及五家農會、一家信用合作社官方網站專案，獨立完成前後台與資料庫建置。
+                    </p>-->
+                     <ul class="text-slate-600 leading-relaxed space-y-2">
+                        <li>負責五家信用合作社行動銀行 iOS App 開發與維護</li>
+                        <li>導入 E2EE 加密、生物辨識（Face ID / Touch ID）、行動支付等關鍵功能</li>
+                        <li>開發核心功能：裝置綁定、預約轉帳、手機門號轉帳、密碼與 Email 變更、常用帳號、電子存單</li>
+                        <li>持續優化系統架構、效能與應用程式安全性</li>
+                        <li>負責農會團購系統後台開發與維護</li>
+                        <li>獨立完成五家農會與一家信用合作社官方網站之全端開發（前端 / 後端 / 資料庫）</li>
+                    </ul>
+                </div>
+
+                 <div class="relative pl-8 border-l-2 border-slate-200">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-600 ring-4 ring-blue-50"></div>
+                    <div class="mb-2">
+                        <span class="text-sm font-bold text-blue-600 uppercase tracking-widest">2012.06 - 2019.05</span>
+                        <h4 class="text-2xl font-bold text-slate-900">生管助理</h4>
+                        <p class="text-lg font-medium text-slate-700">原料藥化學廠</p>
+                    </div>
+                    
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        生產排程追蹤、原物料備料、ERP資料管理與維護、部門教育訓練執行與追蹤、BPR生產文件檢視與審核
+                    </p>
+                </div>
+
+                <!-- Education -->
+                <div class="relative pl-8 border-l-2 border-slate-200">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-400 ring-4 ring-slate-50"></div>
+                    <div class="mb-2">
+                        <span class="text-sm font-bold text-slate-500 uppercase tracking-widest">2008 - 2012</span>
+                        <h4 class="text-2xl font-bold text-slate-900">資訊管理學系</h4>
+                        <p class="text-lg font-medium text-slate-700">龍華科技大學</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 專案作品 Section -->
+    <section id="projects" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <h3 class="text-3xl font-bold mb-4">精選專案 <span class="text-blue-500">.</span></h3>
+                    <p class="text-slate-400">涵蓋金融 App、官網建置與個人創意應用</p>
+                </div>
+                <div class="flex gap-4">
+                    <button class="px-6 py-2 rounded-full border border-slate-700 text-sm hover:bg-slate-800 transition">iOS App</button>
+                    <button class="px-6 py-2 rounded-full border border-slate-700 text-sm hover:bg-slate-800 transition">Web Sites</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Project 1 -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-3xl bg-slate-800 border border-slate-700 aspect-video mb-6 relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex flex-col justify-end p-8">
+                            <span class="text-blue-400 text-xs font-bold tracking-widest uppercase mb-2">Finance / Swift / Objective-C</span>
+                            <h4 class="text-2xl font-bold">五家信用合作社行動銀行</h4>
+                        </div>
+                        <div class="w-full h-full flex items-center justify-center text-slate-700 opacity-20 group-hover:scale-110 transition duration-500">
+                             <i data-lucide="smartphone" size="80"></i>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed">
+                        整合財金公司與關貿 API，實作三倍券/五倍券綁定、行動支付與生物辨識。負責每年憑證更新與半年一次的 Fortify 資安源碼掃描修正。
+                    </p>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-3xl bg-slate-800 border border-slate-700 aspect-video mb-6 relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex flex-col justify-end p-8">
+                            <span class="text-purple-400 text-xs font-bold tracking-widest uppercase mb-2">Web / ASP.NET / SQL Server</span>
+                            <h4 class="text-2xl font-bold">農漁會與信合社官方網站</h4>
+                        </div>
+                        <div class="w-full h-full flex items-center justify-center text-slate-700 opacity-20 group-hover:scale-110 transition duration-500">
+                             <i data-lucide="globe" size="80"></i>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed">
+                        包含台中第二信用合作社及多家農會官網。從前台匯率看板、據點服務到後台管理系統完整開發與維護。
+                    </p>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-3xl bg-slate-800 border border-slate-700 aspect-video mb-6 relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex flex-col justify-end p-8">
+                            <span class="text-green-400 text-xs font-bold tracking-widest uppercase mb-2">Side Project / Swift</span>
+                            <h4 class="text-2xl font-bold">婚禮收禮 App (WeddingGuest)</h4>
+                        </div>
+                        <div class="w-full h-full flex items-center justify-center text-slate-700 opacity-20 group-hover:scale-110 transition duration-500">
+                             <i data-lucide="heart" size="80"></i>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed">
+                        自行開發的實用工具。功能包含 QRCode 賓客報到、禮金統計、喜餅領取等，有效提升婚禮現場作業效率。
+                    </p>
+                    <a href="https://github.com/Julia1032003/WeddingGuest" target="_blank" class="mt-4 inline-flex items-center text-blue-400 hover:text-blue-300 transition font-medium">
+                        查看 GitHub <i data-lucide="external-link" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-3xl bg-slate-800 border border-slate-700 aspect-video mb-6 relative">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex flex-col justify-end p-8">
+                            <span class="text-pink-400 text-xs font-bold tracking-widest uppercase mb-2">Web / HTML / CSS / Firebase</span>
+                            <h4 class="text-2xl font-bold">個人婚禮資訊網站</h4>
+                        </div>
+                        <div class="w-full h-full flex items-center justify-center text-slate-700 opacity-20 group-hover:scale-110 transition duration-500">
+                             <i data-lucide="layout" size="80"></i>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed">
+                        為自己與朋友設計的婚禮資訊站。捨棄 WordPress 框架限制，完全手寫 HTML/CSS 以精確達成理想視覺效果。
+                    </p>
+                     <a href="https://www.wjwedding.com/" target="_blank" class="mt-4 inline-flex items-center text-blue-400 hover:text-blue-300 transition font-medium">
+                        查看 網站 <i data-lucide="external-link" class="ml-2 w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 聯絡 Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h3 class="text-3xl font-bold mb-6">讓我們聊聊專案吧 <span class="text-blue-600">.</span></h3>
+            <p class="text-slate-600 mb-12 max-w-xl mx-auto">
+                目前正在尋找新的技術挑戰。如果您對我的背景感興趣，或者有任何合作機會，歡迎透過以下方式與我聯繫！
+            </p>
+             <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 gap-8">
+                <a href="mailto:julia1032003@gmail.com" class="p-6 rounded-2xl border border-slate-200 hover:border-blue-500 hover:bg-blue-50 transition-all group">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                        <i data-lucide="mail"></i>
+                    </div>
+                    <div class="font-bold">電子郵件</div>
+                    <div class="text-slate-500 text-sm">julia1032003@gmail.com</div>
+                </a>
+            </div>
+             <!--
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <a href="mailto:julia1032003@gmail.com" class="p-6 rounded-2xl border border-slate-200 hover:border-blue-500 hover:bg-blue-50 transition-all group">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                        <i data-lucide="mail"></i>
+                    </div>
+                    <div class="font-bold">電子郵件</div>
+                    <div class="text-slate-500 text-sm">julia1032003@gmail.com</div>
+                </a>
+               
+                <a href="tel:0925434563" class="p-6 rounded-2xl border border-slate-200 hover:border-green-500 hover:bg-green-50 transition-all group">
+                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                        <i data-lucide="phone"></i>
+                    </div>
+                    <div class="font-bold">電話聯繫</div>
+                    <div class="text-slate-500 text-sm">0925-434-563</div>
+                </a>
+                <div class="p-6 rounded-2xl border border-slate-200 hover:border-orange-500 hover:bg-orange-50 transition-all group">
+                    <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition">
+                        <i data-lucide="map-pin"></i>
+                    </div>
+                    <div class="font-bold">所在地</div>
+                    <div class="text-slate-500 text-sm">桃園市, 台灣</div>
+                </div>
+                -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="py-12 border-t border-slate-200 text-center text-slate-400 text-sm">
+        <div class="max-w-6xl mx-auto px-4">
+            <p>&copy; <span id="year"></span> Julia Wang . All rights reserved.</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="https://github.com/Julia1032003" class="hover:text-slate-900 transition">GitHub</a>
+                <span class="text-slate-200">|</span>
+                <a href="https://medium.com/@julia1032003" class="hover:text-slate-900 transition">Medium</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 初始化 Lucide 圖標
+        lucide.createIcons();
+
+        // 設置年份
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 手機選單切換
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 捲動動畫
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('section-fade');
+            observer.observe(section);
+        });
+
+        // 點擊連結後關閉手機選單
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
